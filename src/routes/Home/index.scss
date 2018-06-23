@@ -1,0 +1,15 @@
+$highlight-color: blue;
+
+.main {
+  display: flex;
+  padding: 10px;
+  background: red;
+  flex:1;
+  // max-height: 600px;
+  overflow-y: scroll;
+  flex-direction: column;
+}
+
+.children {
+  // overflow-y: scroll;
+}

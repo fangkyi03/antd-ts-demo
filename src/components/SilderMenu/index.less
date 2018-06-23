@@ -1,0 +1,45 @@
+:global {
+  .aside-box {
+    position: relative;
+    color:#fff;
+    height: 100%;
+    .ant-layout-sider-children {
+      overflow-y: auto;
+    }
+    .menu-box {
+      li {
+        user-select: none;
+        .ant-menu-item-group-title {
+          font-size: 13px;
+          opacity: .5;
+        }
+      }
+    }
+    .aside-btn {
+      position: absolute;
+      right: -50px;
+      top: 0;
+      width: 50px;
+      height: 64px;
+      line-height: 64px;
+      font-size: 18px;
+      z-index: 50;
+      color: #333;
+      text-align: center;
+      a {
+        color: #333;
+      }
+    }
+    .logo {
+      position: relative;
+      height: 64px;
+      text-align: center;
+      background: #002140;
+      z-index: 20;
+      img {
+        width: 50px;
+        height: 50px;
+      }
+    }
+  }
+}
