@@ -70,12 +70,6 @@ class SiderCustom extends Component {
             <Icon type={this.state.collapsed ? "menu-unfold" : "menu-fold"} />
           </a>
         </div>
-        <div className="logo">
-          <img
-            src="http://cxhke.test.upcdn.net/YYpicture/logo.png"
-            alt="农业主体"
-          />
-        </div>
       </div>
     );
   };

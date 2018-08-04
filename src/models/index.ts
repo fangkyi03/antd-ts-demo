@@ -1,3 +1,4 @@
 export enum AllModel {
-  Home = "Home"
+  Home = "Home",
+  HomeForm = 'HomeForm'
 }

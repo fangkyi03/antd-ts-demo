@@ -1,25 +1,17 @@
 import * as React from "react";
-import * as styles from './index.scss'
-import { Button, message } from 'antd';
-
-
+import { connect } from 'dvajs';
+import { fetchProps } from '../../config/propsConfig';
 // export interface AppProps {}
 
-export default class App extends React.Component<any, any> {
-
-  onButtonDown = () =>{
-    message.error('奥术大师大')
-  }
+class App extends React.Component<fetchProps, any> {
 
   render() {
     return (
-      <div className={styles.main}>
-        <div className={styles.children}>
-          <div style={{height:500}}/>
-          <Button onClick={this.onButtonDown} type={'primary'}>按钮</Button>
-          <div style={{height:1000}}/>
-        </div>
+      <div>
+        asdasd
       </div>
     )
   }
 }
+
+export default connect()(App)

@@ -3,7 +3,19 @@ export const menusList = [
   {
     icon: "dashboard",
     link: "home",
-    title: "首页"
+    title: "首页",
+    sub:[
+      {
+        link:'test',
+        title:'测试',
+        sub:[
+          {
+            title:'st',
+            link:'t1'
+          }
+        ]
+      }
+    ]
   },
 ];
 

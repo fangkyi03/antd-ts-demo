@@ -25,7 +25,7 @@ export const routes = [
     name: "首页",
     path: "/home",
     component: () => import("../routes/Home/index.tsx"),
-    models: [AllModel.Home]
+    models: [AllModel.Home,AllModel.HomeForm]
   }
 ];
 
