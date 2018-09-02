@@ -1,3 +1,5 @@
+import { FormItem } from './renderForm';
+import { WrappedFormUtils } from 'antd/lib/form/Form';
 interface fetchInfo {
   /**
    * url请求网址
@@ -61,6 +63,14 @@ interface apiInfo {
    * @memberof apiInfo
    */
   send(fetchInfo: fetchInfo[]): void;
+  /**
+   * 初始化表单
+   *
+   * @param {string} modelName
+   * @param {WrappedFormUtils} form
+   * @memberof apiInfo
+   */
+  initForm?(modelName:string,form:WrappedFormUtils,data:FormItem[]):void
 }
 
 let app: appInfo;
@@ -70,6 +80,7 @@ export const getApp = (appData: any) => {
 };
 
 export default new class Api implements apiInfo {
+
   clear = (modelName: string) => {
     app._store.dispatch({ type: `${modelName}/clear` });
   };
@@ -80,4 +91,11 @@ export default new class Api implements apiInfo {
       payload: params
     });
   };
+
+  initForm = (modelName:string,form:WrappedFormUtils,data:FormItem[]) =>{
+    app._store.dispatch({type:`${modelName}/setValue`,payload:{
+      formData:form,
+      formItemData:data
+    }})
+  }
 }();

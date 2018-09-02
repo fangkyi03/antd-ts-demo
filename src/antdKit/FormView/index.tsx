@@ -4,6 +4,7 @@ import { FormProps } from "antd/lib/form";
 import { WrappedFormUtils } from "antd/lib/form/Form";
 import renderForm, { FormItem } from "../utils/renderForm";
 import {createSafeView} from 'antdKit';
+import api from "../utils/api";
 
 interface formProps extends formData{
   form: WrappedFormUtils;
@@ -18,10 +19,10 @@ interface formData {
 export default function createForm(modelName: string,data:FormItem[]) :React.ReactNode {
   class FormView extends React.Component<formProps> {
 
-    constructor(props: formProps) {
-      super(props);
+    componentDidMount() {
+      api.initForm(modelName,this.props.form,data)
     }
-
+    
     render() {
       const { formProp,form } = this.props;
       return <Form {...formProp}>{renderForm(data, form)}</Form>;
