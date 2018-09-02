@@ -19,7 +19,10 @@
     "noUnusedLocals": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": {
+      "antdKit": ["./src/antdKit"]
+    }
   },
   "exclude": [
     "node_modules",

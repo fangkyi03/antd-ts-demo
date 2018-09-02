@@ -3,6 +3,7 @@ module.exports = {
   webpack: function override(config, env) {
     config.resolve.alias = {
       'dva': 'dvajs',
+      'antdKit':'./src/antdKit'
     }
     // config = rewireLess(config, env);
     // config = rewireCssModules(config, env);

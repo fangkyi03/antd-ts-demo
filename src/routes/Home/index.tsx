@@ -1,17 +1,36 @@
 import * as React from "react";
-import { connect } from 'dvajs';
-import { fetchProps } from '../../config/propsConfig';
-// export interface AppProps {}
+import styles from "./index.scss";
+import { createSafeView, createForm } from 'antdKit';
+import { FormInput } from '../../antdKit/utils/renderForm';
+class App extends React.Component<any, any> {
 
-class App extends React.Component<fetchProps, any> {
+  renderForm = () => {
+    return createForm('HomeForm',this.formData)
+  };
+
+  formData: [FormInput,FormInput] = [
+    {
+      type: "input",
+      name: "测试",
+      key: "test",
+    },
+    {
+      type:'input',
+      name:'演示',
+      key:'test1'
+    }
+  ];
+
+  formView: any = this.renderForm();
 
   render() {
-    return (
-      <div>
-        asdasd
-      </div>
-    )
+    const FormView = this.formView;
+    return <div className={styles.main}>
+        <a>asdasdas</a>
+        {/* {FormView} */}
+        <FormView />
+      </div>;
   }
 }
 
-export default connect()(App)
+export default createSafeView("Home")(App);

@@ -1,4 +1,4 @@
-import "./index.less";
+import "./styles/index.less";
 import dva from "dvajs";
 import router from "./router";
 import * as NetTool from "./common/netTool";
@@ -6,6 +6,7 @@ import * as converData from "./common/converData";
 
 import fetch from "./models/fetch";
 import { message } from "antd";
+import { getApp } from "./antdKit/utils/api";
 
 // import {createBrowserHistory} from 'history'
 
@@ -39,6 +40,8 @@ app.model(
     }
   })
 );
+
+getApp(app)
 
 // 载入路由设置
 app.router(router);
